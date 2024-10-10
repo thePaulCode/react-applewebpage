@@ -5,7 +5,6 @@ export const Header = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: solid 0px green;
     top: 0;    
     margin: 0;
     right: 0;
