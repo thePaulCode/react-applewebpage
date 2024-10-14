@@ -95,7 +95,7 @@ export const BannerArea = styled.div<BannerBackgroundType>`
 
 `;
 
-import {BannerArea} fron './AppStyled';
+import {BannerArea} from './AppStyled';
 
 <BannerArea bannerBackground="#040303"></BannerArea >
 ```
