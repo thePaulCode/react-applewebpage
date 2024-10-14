@@ -9,6 +9,20 @@ interface BannerBackgroundType {
     bannerBackground?: string;
 }
 
+interface FontSizeType {
+    fontSize? : string;
+}
+
+
+interface OptionMacType {
+    selected: string;
+}
+
+interface FlexDirectionType {
+    direction?: string;
+    gapItem?: string;
+}
+
 export const Header = styled.div`
     display: flex;
     flex-direction: row;
@@ -68,9 +82,9 @@ export const ItemsApple = styled.div`
     cursor: pointer;
 `;
 
-export const TextItems = styled.a`
+export const TextItems = styled.a<FontSizeType>`
 
-    font-size: 12px;
+    font-size: ${(props)=>props.fontSize? props.fontSize : '12px' };
     color: black;
     font-family: 'MyriadProRegular';
     opacity: 0.8;
@@ -124,7 +138,7 @@ export const ItemInfoEconomia = styled.div`
 
 export const BannerArea = styled.div<BannerBackgroundType>`
 
-    border: solid 3px green;
+    border: solid 0px green;
     height: 580px;
     display: flex;
     flex-direction: column;
@@ -156,15 +170,15 @@ export const BannerArea = styled.div<BannerBackgroundType>`
 
 `;
 
-export const ComprarSaibaMais = styled.div`
+export const ComprarSaibaMais = styled.div<FlexDirectionType>`
     display: flex;
-    flex-direction: row;
+    flex-direction: ${(props)=>props.direction? props.direction : 'row'};
     justify-content: center;
     align-items: center;
     border: solid 0px red;
     height: 50px;
     width: 200px;
-    gap: 25px;
+    gap: ${(props)=>props.gapItem? props.gapItem : '25px'};
     
     .saiba--mais  {      
         font-family: 'MyriadProRegular';
@@ -203,4 +217,77 @@ export const ImagemBanner = styled.image`
     height: 400px;
     width: 450px;
     margin-top: 25px;
+`;
+
+export const SelectMac = styled.div`
+
+    border: solid 0px red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 580px;
+
+    h1 {
+        font-size: 40px;
+        font-family: 'MyriadProBold';
+        color: #1d1d1f;
+        margin-top: 5cqmax;
+    }
+
+`;
+
+export const SelectItem = styled.div`
+
+    margin-top: 30px;
+    border-bottom: solid 2px #d2d2d2;
+    height: 40px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    gap: 40px;
+
+`;
+
+
+export const OptionMac = styled.div<OptionMacType>`
+
+    color: ${(props)=>props.selected? '' : ''};
+    font-family: 'MyriadProRegular';
+    font-size: 18px;
+    width: 95px;
+    height: 100%;
+    border-bottom: solid 0px #1d1d1f;
+
+`;
+
+export const OptionsArea = styled.div`
+
+    display: flex;
+    flex-direction: row;
+    height: 580px;
+    width: 880px;
+    align-items: center;
+    justify-content: center;
+    border: solid 0px blue;
+    
+`;
+
+export const CardOption = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    border-bottom: solid 2px #d2d2d2;
+    height: 350px;
+    width: 100px;
+    margin: 0px 20px 0 20px;
+    flex: 1;
+    padding-bottom: 5px;
+
 `;
