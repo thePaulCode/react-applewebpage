@@ -1,5 +1,5 @@
 # Apple Web Page Clone
-## @author: Paulo Santos
+
 Este projeto é uma réplica da página principal da Apple, desenvolvida com **React** e utilizando **Styled Components** para estilização, o **useState** para o gerenciamento de estado local e algumas **funções avançadas do React** para manipulação de dados e componentes.
 
 ## Índice
